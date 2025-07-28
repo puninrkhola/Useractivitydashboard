@@ -1,0 +1,160 @@
+/* Set full-page background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  min-height: 100vh;
+}
+
+/* Header styling */
+h1 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+/* Container holding all cards */
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Individual card style */
+.user-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.2rem;
+  width: 220px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+/* Hover effect */
+.user-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Status indicator text */
+.user-card h3 {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #ffd700;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .user-card {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-card {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  h2, h3 {
+    font-size: 1rem;
+  }
+}
+.toggle-button {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.grouped-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.grouped-container > div {
+  flex: 1;
+  min-width: 300px;
+}
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.toggle-mode {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: white !important;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider (actual switch knob) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* When checked */
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
